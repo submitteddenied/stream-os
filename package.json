@@ -22,7 +22,9 @@
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
+    "css-loader": "^3.2.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "style-loader": "^1.0.0"
   }
 }

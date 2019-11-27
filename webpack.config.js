@@ -21,6 +21,10 @@ module.exports = {
         use: {
           loader: 'html-loader'
         }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
@@ -29,5 +33,6 @@ module.exports = {
       template: path.resolve("./src/frontend/index.html"),
       filename: path.resolve(OUTPUT_DIR, "./index.html")
     })
+    // To add more HTML entry points, add more HtmlWebPackPlugin instances to this list
   ]
 };
