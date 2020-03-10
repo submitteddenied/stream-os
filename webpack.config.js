@@ -28,6 +28,13 @@ const frontend = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|jpeg)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/[name].[ext]',
+        }
       }
     ]
   },
@@ -37,14 +44,14 @@ const frontend = {
     watchContentBase: true,
     liveReload: true,
     after: (app, server, compiler) => {
-      //console.log(`Including the backend...`)
-      app.use(require('./src/backend/routes'))
+      app.use(require('./src/backend/app'))
     }
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: path.resolve("./src/frontend/index.html"),
-      filename: path.resolve(OUTPUT_DIR, "./index.html")
+      filename: path.resolve(OUTPUT_DIR, "./index.html"),
+      chunks: ['app']
     })
     // To add more HTML entry points, add more HtmlWebPackPlugin instances to this list
   ]
