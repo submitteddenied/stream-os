@@ -3,7 +3,7 @@ import ReactDOM from "react-dom"
 import Todoist from './services/todoist'
 import TodoComponent from "./components/TodoComponent"
 
-import "./style.css"
+import "./style.scss"
 
 const parseSearch = (search) => {
   return search.slice(1).split('&').reduce((memo, keyPair) => {

@@ -10,26 +10,32 @@ class TodoComponent extends Component {
   componentDidMount() {
     const update = () => {
       this.props.todoist.getTasks().then((tasks) => {
+        tasks.sort((t1, t2) => t1.order - t2.order)
         this.setState({tasks})
-        window.setTimeout(update, 1000)
+        window.setTimeout(update, 1500)
       })
     }
     update()
   }
 
   renderTasks() {
-    return this.state.tasks.map((task) => {
-      return (<div key={task.id} className="alert alert-primary">
-        {task.content}
+    let first = true
+    return this.state.tasks.slice(0, 5).map((task) => {
+      const alertClass = first ? "success" : "primary"
+      first = false
+      return (<div key={task.id} className={`alert alert-${alertClass} todo-item`}>
+        <span className="todo-item">{task.content}</span>
       </div>)
     })
   }
 
   render() {
     return (
-      <div>
-        <h1>Todo</h1>
-        {this.renderTasks()}
+      <div className="todos">
+        <div className="wrapper">
+          <h1>Stream Todo</h1>
+          {this.renderTasks()}
+        </div>
       </div>
     )
   }

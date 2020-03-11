@@ -1,0 +1,38 @@
+$width: 2560px * 0.8; // account for monitor at 125% scale (gg windows)
+$height: 1440px * 0.8;
+
+body {
+  position: relative;
+  width: $width;
+  height: $height;
+}
+  
+.todos {
+  position: absolute;
+  width: 20%;
+  height: 360px;
+  overflow: hidden;
+  right: 1%;
+  bottom: 0;
+
+  background-color: black;
+  color: white;
+  padding: 1em;
+  border-radius: 10px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.todos .wrapper {
+  position: relative;
+}
+
+.todos .wrapper h1 {
+  height: 16.6%;
+}
+
+div.todo-item {
+  height: 16.6%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
