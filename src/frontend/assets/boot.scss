@@ -55,11 +55,23 @@ $countdown-height: 20%;
   width: $main-width;
   height: 100% - (2 * $top-margin);
 }
+
 .countdown-container {
   bottom: $top-margin;
   right: $side-margin;
   width: 100% - (2* $side-margin) - $main-width - $spacing;
   height: $countdown-height;
+  
+  .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-size: 6.5rem;
+      margin: 0;
+    }
+  }
 }
 
 .progress-container {

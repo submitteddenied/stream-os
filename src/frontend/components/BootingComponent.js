@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import SOSContainer from './StreamOSContainer'
+import CountdownComponent from './CountdownComponent'
 
 class BootingComponent extends Component {
   constructor() {
@@ -16,7 +17,7 @@ class BootingComponent extends Component {
           <h1>World</h1>
         </SOSContainer>
         <SOSContainer className="countdown-container">
-          <h1>T-05:00.00</h1>
+          <CountdownComponent durationSeconds={61} />
         </SOSContainer>
       </div>
     )
