@@ -1,0 +1,70 @@
+@use "canvas";
+
+#base {
+  height: 100%;
+}
+
+.boot-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 58, 66, 0.1);
+  color: #e1e6e9;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+$notch-size: 30px;
+
+@mixin notched($size) {
+  clip-path: polygon(
+    0% #{$size},
+    #{$size} 0%,
+    100% 0%,
+    100% calc(100% - #{$size}),
+    calc(100% - #{$size}) 100%,
+    0% 100%
+  );
+}
+
+.streamos-container {
+  position: absolute;
+  background-color: rgb(184, 50, 50);
+  @include notched($notch-size);
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+
+  .inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: $notch-size;
+    background-color: rgba(43, 58, 66);
+    @include notched($notch-size - 1px);
+  }
+}
+
+$side-margin: 2%;
+$top-margin: 2%;
+$spacing: 2%;
+$main-width: 60%;
+$countdown-height: 20%;
+
+.main-container {
+  top: $top-margin;
+  left: $side-margin;
+  width: $main-width;
+  height: 100% - (2 * $top-margin);
+}
+.countdown-container {
+  bottom: $top-margin;
+  right: $side-margin;
+  width: 100% - (2* $side-margin) - $main-width - $spacing;
+  height: $countdown-height;
+}
+
+.progress-container {
+  top: $top-margin;
+  right: $side-margin;
+  height: 100% - (2 * $top-margin) - $spacing - $countdown-height;
+  width: 100% - (2* $side-margin) - $main-width - $spacing;
+}
