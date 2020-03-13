@@ -31,8 +31,8 @@ class TodoComponent extends Component {
 
   render() {
     return (
-      <div className="todos">
-        <div className="wrapper">
+      <div className="streamos-container todos">
+        <div className="inner">
           <h1>Stream Todo</h1>
           {this.renderTasks()}
         </div>

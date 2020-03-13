@@ -1,30 +1,17 @@
 @use "canvas";
   
 .todos {
-  position: absolute;
   width: 20%;
   height: 360px;
-  overflow: hidden;
   right: 1%;
-  bottom: 0;
-
-  background-color: black;
-  color: white;
-  padding: 1em;
-  border-radius: 10px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-}
-
-.todos .wrapper {
-  position: relative;
+  bottom: 1%;
 }
 
 .todos .wrapper h1 {
   height: 16.6%;
 }
 
-div.todo-item {
+.todo-item {
   height: 16.6%;
   padding: 10px;
   margin-bottom: 10px;
@@ -36,4 +23,11 @@ div.todo-item {
   height: 315px;
   left: 45px; // For my 1440p canvas, with windows set to 125% monitor scale
   bottom: 45px; // These values correspond to 62px left and 996 top in OBS
+
+  .inner {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
 }

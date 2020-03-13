@@ -9,7 +9,7 @@ class CameraFrameComponent extends Component {
     return (
       <div className="cameraframe streamos-container">
         <div className="inner">
-          <h1>Camera is broken? 🙃</h1>
+          <h1>🎥 Camera is broken? 🙃</h1>
         </div>
       </div>
     )
