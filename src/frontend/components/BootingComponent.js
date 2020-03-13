@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import SOSContainer from './StreamOSContainer'
 import CountdownComponent from './CountdownComponent'
+import ProgressListComponent from './ProgressListComponent'
+
+import config from '../config/boot.json'
 
 class BootingComponent extends Component {
   constructor() {
@@ -14,10 +17,10 @@ class BootingComponent extends Component {
           <h1>Hello</h1>
         </SOSContainer>
         <SOSContainer className="progress-container">
-          <h1>World</h1>
+          <ProgressListComponent items={config.progressList} />
         </SOSContainer>
         <SOSContainer className="countdown-container">
-          <CountdownComponent durationSeconds={61} />
+          <CountdownComponent durationSeconds={config.countdownSeconds} />
         </SOSContainer>
       </div>
     )

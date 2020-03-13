@@ -1,0 +1,28 @@
+{
+  "countdownSeconds": 300,
+  "progressList": [
+    {
+      "title": "Performing setup tasks",
+      "durationSeconds": 31,
+      "count": 5,
+      "mode": "count"
+    },
+    {
+      "title": "Notifying followers",
+      "durationSeconds": 15,
+      "count": 65,
+      "mode": "count"
+    },
+    {
+      "title": "Connecting to Twitch",
+      "durationSeconds": 30,
+      "mode": "percent"
+    },
+    {
+      "title": "Downloading game updates",
+      "durationSeconds": 90,
+      "size": 1500,
+      "mode": "download"
+    }
+  ]
+}

@@ -1,10 +1,6 @@
 import React, {Component} from 'react'
 
-const roundToPlaces = (num, places) => {
-  let temp = num * Math.pow(10, places)
-  temp = Math.floor(temp)
-  return temp / Math.pow(10, places)
-}
+import util from '../util'
 
 class CountdownComponent extends Component {
   constructor() {
@@ -43,7 +39,7 @@ class CountdownComponent extends Component {
       return "0:00.00"
     }
 
-    const seconds = roundToPlaces(millis / 1000, 3)
+    const seconds = util.roundToPlaces(millis / 1000, 3)
     const minutes = Math.floor(seconds / 60)
     let secondsLength = 2
     if(minutes < 1) {

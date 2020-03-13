@@ -1,4 +1,11 @@
+@use "normalize.css/normalize";
 @use "canvas";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; // 1
+}
 
 #base {
   height: 100%;
@@ -7,9 +14,9 @@
 .boot-container {
   width: 100%;
   height: 100%;
-  background-color: rgba(43, 58, 66, 0.1);
+  background-color: rgb(43, 58, 66);
   color: #e1e6e9;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
 }
 
 $notch-size: 30px;
@@ -38,7 +45,7 @@ $notch-size: 30px;
     width: 100%;
     height: 100%;
     padding: $notch-size;
-    background-color: rgba(43, 58, 66);
+    background-color:hsl(203, 22%, 7%);
     @include notched($notch-size - 1px);
   }
 }
@@ -79,4 +86,29 @@ $countdown-height: 20%;
   right: $side-margin;
   height: 100% - (2 * $top-margin) - $spacing - $countdown-height;
   width: 100% - (2* $side-margin) - $main-width - $spacing;
+}
+
+.progress-bar {
+  .title {
+    text-transform: uppercase;
+  }
+}
+
+.bar-outer {
+  height: 30px;
+  width: 100%;
+  background-color: #a8a8a8;
+}
+
+.bar-inner {
+  height: 100%;
+
+  &.in-progress {
+    background-color: #0033dd;
+  }
+
+  &.complete {
+    background-color: #00dd33;
+    width: 100%;
+  }
 }
