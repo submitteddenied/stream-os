@@ -29,3 +29,11 @@ div.todo-item {
   padding: 10px;
   margin-bottom: 10px;
 }
+
+.cameraframe {
+  color: canvas.$streamOsFontColor;
+  width: 364px;
+  height: 315px;
+  left: 45px; // For my 1440p canvas, with windows set to 125% monitor scale
+  bottom: 45px; // These values correspond to 62px left and 996 top in OBS
+}

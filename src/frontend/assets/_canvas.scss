@@ -1,6 +1,40 @@
 $width: 2560px * 0.8; // account for monitor at 125% scale (gg windows)
 $height: 1440px * 0.8;
 
+$frameColor: rgb(184, 50, 50);
+$frameBackground: hsl(203, 22%, 7%);
+$notch-size: 30px;
+$streamOsFontColor: #e1e6e9;
+
+@mixin notched($size) {
+  clip-path: polygon(
+    0% #{$size},
+    #{$size} 0%,
+    100% 0%,
+    100% calc(100% - #{$size}),
+    calc(100% - #{$size}) 100%,
+    0% 100%
+  );
+}
+
+.streamos-container {
+  position: absolute;
+  background-color: $frameColor;
+  @include notched($notch-size);
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+
+  .inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: $notch-size;
+    background-color: $frameBackground;
+    @include notched($notch-size - 1px);
+  }
+}
+
 body {
   position: relative;
   width: $width;

@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import Todoist from './services/todoist'
-import TodoComponent from "./components/TodoComponent"
+import LiveComponent from "./components/LiveComponent"
 
 import "./assets/style.scss"
 
@@ -34,4 +34,4 @@ if(loadedTokenStr !== null) {
 }
 
 const wrapper = document.getElementById("base")
-wrapper && ReactDOM.render(<TodoComponent todoist={todoist}/>, wrapper)
+wrapper && ReactDOM.render(<LiveComponent todoist={todoist}/>, wrapper)
