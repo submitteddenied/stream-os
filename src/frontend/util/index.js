@@ -14,5 +14,12 @@ export default {
     }
     
     return result.join('.')
+  },
+  jitter: (value, amount) => {
+    let jitter = value * amount * 2
+    jitter = Math.random() * jitter
+    jitter -= jitter / 2
+  
+    return value + jitter
   }
 }

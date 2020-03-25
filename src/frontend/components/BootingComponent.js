@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import SOSContainer from './StreamOSContainer'
 import CountdownComponent from './CountdownComponent'
 import ProgressListComponent from './ProgressListComponent'
+import TerminalComponent from './TerminalComponent'
 
 import config from '../config/boot.json'
 
@@ -14,7 +15,7 @@ class BootingComponent extends Component {
     return (
       <div className="boot-container">
         <SOSContainer className="main-container">
-          <h1>Hello</h1>
+          <TerminalComponent />
         </SOSContainer>
         <SOSContainer className="progress-container">
           <ProgressListComponent items={config.progressList} />

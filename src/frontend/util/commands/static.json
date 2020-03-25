@@ -1,0 +1,51 @@
+[
+  {
+    "input": "typey-typey", 
+    "output": [
+      "Doing...", 
+      "Done!"
+    ], 
+    "outputTiming": 1000
+  },
+  {
+    "input": "ping submitteddenied.com",
+    "output": [
+      "Pinging submitteddenied.com [172.217.14.78] with 32 bytes of data:",
+      "    Reply from 172.217.14.78: bytes=32 time=15ms TTL=54",
+      "    Reply from 172.217.14.78: bytes=32 time=12ms TTL=54",
+      "    Reply from 172.217.14.78: bytes=32 time=23ms TTL=54",
+      "    Reply from 172.217.14.78: bytes=32 time=18ms TTL=54"
+    ],
+    "outputTiming": 1000
+  },
+  {
+    "input": "make && make install",
+    "output": [
+      "Makefile:333: recipe for target 'install-dataDATA' failed",
+      "make[3]: *** [install-dataDATA] Error 1",
+      "make[3]: Leaving directory '/work/usr/local/src/configs'",
+      "Makefile:403: recipe for target 'install-am' failed",
+      "make[2]: *** [install-am] Error 2",
+      "make[2]: Leaving directory '/work/usr/local/src/configs'",
+      "Makefile:461: recipe for target 'install-recursive' failed",
+      "make[1]: *** [install-recursive] Error 1",
+      "make[1]: Leaving directory '/work/usr/local/src'",
+      "Makefile:483: recipe for target 'install-recursive' failed",
+      "make: *** [install-recursive] Error 1"
+    ],
+    "outputTiming": 250
+  },
+  {
+    "input": "git push",
+    "output": [
+      "Counting objects: 42, done.",
+      "Delta compression using up to 8 threads.",
+      "Compressing objects: 100% (42/42), done.",
+      "Writing objects: 100% (43/43), 4533 bytes | 675.00 KiB/s, done.",
+      "Total 43 (delta 0), reused 0 (delta 0)",
+      "To git@github.com:submitteddenied/stream-os",
+      "   f939651..27c7b049  master -> master"
+    ],
+    "outputTiming": 100
+  }
+]
