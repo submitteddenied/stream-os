@@ -5,7 +5,8 @@ const OUTPUT_DIR = path.resolve(__dirname, "dist", "frontend")
 const frontend = {
   entry: {
     app: path.resolve("src/frontend/index.js"),
-    boot: path.resolve("src/frontend/boot.js")
+    boot: path.resolve("src/frontend/boot.js"),
+    three: path.resolve("src/frontend/three.js")
   },
   output: {
     path: OUTPUT_DIR,
@@ -63,6 +64,11 @@ const frontend = {
       template: path.resolve("./src/frontend/boot.html"),
       filename: path.resolve(OUTPUT_DIR, "./boot.html"),
       chunks: ['boot']
+    }),
+    new HtmlWebPackPlugin({
+      template: path.resolve("./src/frontend/three.html"),
+      filename: path.resolve(OUTPUT_DIR, "./three.html"),
+      chunks: ['three']
     })
     // To add more HTML entry points, add more HtmlWebPackPlugin instances to this list
   ]

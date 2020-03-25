@@ -21,14 +21,6 @@ const MODES = {
 
 const DURATION_JITTER = 0.3
 
-const jitter = (value, amount) => {
-  let jitter = value * amount * 2
-  jitter = Math.random() * jitter
-  jitter -= jitter / 2
-
-  return value + jitter
-}
-
 class ProgressBarComponent extends Component {
   constructor() {
     super()
@@ -39,16 +31,16 @@ class ProgressBarComponent extends Component {
   }
 
   componentDidMount() {
-    this.duration = jitter(this.props.item.durationSeconds, DURATION_JITTER) * 1000
+    this.duration = util.jitter(this.props.item.durationSeconds, DURATION_JITTER) * 1000
     switch(this.props.item.mode) {
       case 'percent':
         this.max = 100
         break
       case 'count':
-        this.max = jitter(this.props.item.count, MODES.count.jitter)
+        this.max = util.jitter(this.props.item.count, MODES.count.jitter)
         break
       case 'download':
-        this.max = jitter(this.props.item.size, MODES.download.jitter)
+        this.max = util.jitter(this.props.item.size, MODES.download.jitter)
         break
     }
     window.requestAnimationFrame((t) => this.update(t))
