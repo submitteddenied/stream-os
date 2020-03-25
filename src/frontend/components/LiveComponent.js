@@ -4,6 +4,7 @@ import CameraFrameComponent from './CameraFrameComponent'
 import ThreeDeeCanvas from './ThreeDeeCanvas'
 
 import RotatingCube from '../characters/RotatingCube'
+import Robot from '../characters/Robot/Robot'
 
 class LiveComponent extends Component {
   constructor() {
@@ -11,7 +12,7 @@ class LiveComponent extends Component {
   }
 
   render() {
-    const characterList = [new RotatingCube()]
+    const characterList = [new RotatingCube(), new Robot()]
     return (
       <div>
         <ThreeDeeCanvas characters={characterList} />

@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 
 import "./assets/style.scss"
-import RotatingCubeComponent from "./components/RotatingCubeComponent"
+import ThreeDeeCanvas from "./components/ThreeDeeCanvas"
 
 const wrapper = document.getElementById("base")
-wrapper && ReactDOM.render(<RotatingCubeComponent />, wrapper)
+wrapper && ReactDOM.render(<ThreeDeeCanvas characters={[]} />, wrapper)

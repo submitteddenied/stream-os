@@ -32,7 +32,7 @@ const frontend = {
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
-        test: /\.(png|jpg|jpeg)$/,
+        test: /\.(png|jpg|jpeg|glb)$/,
         loader: 'file-loader',
         options: {
           name: 'assets/[name].[ext]',
