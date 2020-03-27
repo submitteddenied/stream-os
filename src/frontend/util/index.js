@@ -21,5 +21,8 @@ export default {
     jitter -= jitter / 2
   
     return value + jitter
+  },
+  degToRad: (deg) => {
+    return deg * (Math.PI / 180)
   }
 }

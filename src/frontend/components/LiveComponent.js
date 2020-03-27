@@ -12,7 +12,7 @@ class LiveComponent extends Component {
   }
 
   render() {
-    const characterList = [new RotatingCube(), new Robot()]
+    const characterList = [new Robot()]
     return (
       <div>
         <ThreeDeeCanvas characters={characterList} />
