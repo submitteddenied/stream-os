@@ -9,10 +9,10 @@ class ThreeDeeCanvas extends Component {
   }
 
   componentDidMount() {
-    this.camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 100 )
-    this.camera.position.z = 35
+    this.camera = new THREE.PerspectiveCamera( 39.375, window.innerWidth / window.innerHeight, 0.01, 2000 )
+    this.camera.position.z = 55
     this.camera.position.y = 0
-    this.camera.lookAt(0, 24.5, 0)
+    this.camera.lookAt(0, 19.75, 0)
  
     this.scene = new THREE.Scene()
     this.clock = new THREE.Clock()

@@ -10,13 +10,14 @@ class IdleState {
 
   activate(currT, robot) {
     this.idleStart = currT
+    this.idleDurationSec = util.jitter(5, 0.25)
     robot.fadeToAction('Idle', 1)
   }
 
   update(dt, currT, robot) {
     //returns false if this state is not finished and should stay on the stack
     if(Math.abs(robot.rotation().y) > util.degToRad(1)) {
-      robot.rotation().y -= Math.sign(robot.rotation().y) * Math.min(robot.rotation().y, util.degToRad(10))
+      robot.rotation().y -= Math.sign(robot.rotation().y) * Math.min(Math.abs(robot.rotation().y), util.degToRad(10))
     }
 
     if(this.idleStart + this.idleDurationSec < currT) {

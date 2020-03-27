@@ -1,5 +1,5 @@
 const MAX_X_DELTA = 18
-const MAX_SPEED_PER_SECOND = MAX_X_DELTA / 2
+const MAX_SPEED_PER_SECOND = MAX_X_DELTA / 4.5
 const TARGET_THRESHOLD = 0.3
 
 import util from '../../../util'
