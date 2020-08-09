@@ -44,10 +44,7 @@ const frontend = {
     contentBase: OUTPUT_DIR,
     publicPath: '/',
     watchContentBase: true,
-    liveReload: true,
-    after: (app, server, compiler) => {
-      app.use(require('./src/backend/app'))
-    }
+    liveReload: true
   },
   plugins: [
     new HtmlWebPackPlugin({
@@ -75,7 +72,7 @@ const frontend = {
 }
 
 const backend = {
-  entry: path.resolve("src/backend/app.js"),
+  entry: path.resolve("src/backend/prod.js"),
   target: "node",
   output: {
     path: path.resolve(__dirname, "dist", "backend")

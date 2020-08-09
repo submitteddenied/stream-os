@@ -26,6 +26,10 @@ class Todoist {
     const queryString = util.qs(queryData)
     return `${AUTH_URL}?${queryString}`
   }
+
+  constructor(store) {
+    this.store = store
+  }
 }
 
 module.exports = Todoist

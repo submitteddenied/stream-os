@@ -1,5 +1,8 @@
 const router = require('express').Router()
 
-router.use('/api', require('./api'))
+module.exports = (store) => {
+    router.use('/api', require('./api')(store))
 
-module.exports = router
+
+    return router
+}
