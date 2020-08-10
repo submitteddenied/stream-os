@@ -27,8 +27,24 @@ class Todoist {
     return `${AUTH_URL}?${queryString}`
   }
 
-  constructor(store) {
+  constructor(store, options) {
     this.store = store
+    this.intervalMs = options.intervalMs || 1500
+  }
+
+  startUpdates() {
+    this.intervalId = setInterval(() => {
+      this.update()
+    }, this.intervalMs)
+  }
+
+  stopUpdates() {
+    clearInterval(this.intervalId)
+    this.intervalId = null
+  }
+
+  update() {
+    //TODO - fetch todos and put the in the store
   }
 }
 

@@ -58,11 +58,11 @@ module.exports = (store) => {
       store.dispatch(JSON.parse(msg))
     })
 
-    ws.send(store.getState()) //TODO: stringify?
+    ws.send(JSON.stringify(store.getState())) //TODO: stringify?
   })
 
   store.subscribe(() => {
-    const newState = store.getState() //TODO stringify?
+    const newState = JSON.stringify(store.getState()) //TODO stringify?
     //console.log(`New State: ${newState}`)
     clients.forEach((client) => {
       client.send(newState)

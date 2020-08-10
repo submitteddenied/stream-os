@@ -1,6 +1,8 @@
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const Redux = require('redux')
+const EliteDangerous = require('./services/elite_dangerous')
+const store = require('../shared/redux')
 
 var isProduction = process.env.NODE_ENV === 'production'
 
@@ -13,20 +15,11 @@ module.exports = (app) => {
   app.use(bodyParser.json())
   app.use(cookieParser())
 
-  function counter(state = 0, action) {
-    switch (action.type) {
-      case 'INCREMENT':
-        return state + 1
-      case 'DECREMENT':
-        return state - 1
-      default:
-        return state
-    }
-  }
-
   // Create a Redux store holding the state of your app.
   // Its API is { subscribe, dispatch, getState }.
-  let store = Redux.createStore(counter)
+  
+
+  const edService = new EliteDangerous(store)
 
   app.use(require('./routes')(store))
 

@@ -1,5 +1,3 @@
-const actions = require("../../actions")
-
 const ACTIONS = {
     SET_TODO_LIST: 'SET_TODO_LIST',
     UPDATE: 'UPDATE'
