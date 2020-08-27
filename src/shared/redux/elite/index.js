@@ -9,8 +9,8 @@ const DEFAULT_STATE = {
     loadedState: false,
     systemScanned: false,
     currentSystem: {},
-    bodiesToScan: [],
-    scannedBodies: []
+    bodiesToMap: [],
+    mappedBodies: []
 }
 
 // TODO: put all the body types and their values in here, allow a config for "minimum map value"
@@ -19,7 +19,7 @@ const DEFAULT_STATE = {
 
 function isTarget(state, data) {
     //skip stuff that's already mapped
-    if(state.scannedBodies.indexOf(data.BodyName) >= 0) {
+    if(state.mappedBodies.indexOf(data.BodyName) >= 0) {
         return false
     }
 
@@ -41,10 +41,10 @@ const eliteReducer = (state=DEFAULT_STATE, action) => {
     //TODO STATUS action gives a bunch of info
     switch(action.type) {
         case ACTIONS.FSD_JUMP:
-            return Object.assign({}, state, { loadedState: true, systemScanned: false, currentSystem: action.event, bodiesToScan: [], scannedBodies: [] })
+            return Object.assign({}, state, { loadedState: true, systemScanned: false, currentSystem: action.event, bodiesToMap: [], mappedBodies: [] })
         case ACTIONS.SCAN:
             if(action.event.ScanType === 'Detailed' && isTarget(state, action.event)) {
-                return Object.assign({}, state, { loadedState: true, bodiesToScan: [...state.bodiesToScan, action.event.BodyName]})
+                return Object.assign({}, state, { loadedState: true, bodiesToMap: [...state.bodiesToMap, action.event.BodyName]})
             } else {
                 return state
             }
@@ -52,8 +52,8 @@ const eliteReducer = (state=DEFAULT_STATE, action) => {
             return Object.assign({}, state, { loadedState: true, systemScanned: true })
         case ACTIONS.SURFACE_SCANNED:
             return Object.assign({}, state, { loadedState: true }, {
-                bodiesToScan: state.bodiesToScan.filter((x) => x !== action.event.BodyName),
-                scannedBodies: [...state.scannedBodies, action.event.BodyName]
+                bodiesToMap: state.bodiesToMap.filter((x) => x !== action.event.BodyName),
+                mappedBodies: [...state.mappedBodies, action.event.BodyName]
             })
         default:
             return state

@@ -2,7 +2,7 @@ const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const Redux = require('redux')
 const EliteDangerous = require('./services/elite_dangerous')
-const store = require('../shared/redux')
+const storeReducers = require('../shared/redux')
 
 var isProduction = process.env.NODE_ENV === 'production'
 
@@ -14,6 +14,7 @@ module.exports = (app) => {
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use(bodyParser.json())
   app.use(cookieParser())
+  const store = Redux.createStore(storeReducers)
 
   // Create a Redux store holding the state of your app.
   // Its API is { subscribe, dispatch, getState }.

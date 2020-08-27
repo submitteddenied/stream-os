@@ -7,14 +7,14 @@ const config = require('../../webpack.config.js');
 const compiler = webpack(config);
 
 const app = require('./app')
-app(server)
 
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js
 // configuration file as a base.
 server.use(webpackDevMiddleware(compiler, {
   publicPath: config[0].output.publicPath,
-}));
+}))
 
+app(server)
 const PORT = 8080
 server.listen(PORT, function () {
   console.log(`Dev server listening on port ${PORT}`);

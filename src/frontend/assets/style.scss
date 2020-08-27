@@ -31,3 +31,53 @@
     flex-direction: column;
   }
 }
+
+.elite.exploration {
+  left: 10px;
+  top: 10px;
+  width: 400px;
+
+  .mapped {
+    text-decoration: line-through;
+  }
+
+  ul {
+    clear: both;
+  }
+
+  .scanList {
+    li span {
+      font-size: 1.5rem;
+    }
+  }
+
+  .meta {
+    padding-left: 20px;
+
+    li {
+      float: left;
+      margin-right: 2em;
+
+      span {
+        margin-left: -10px;
+      }
+    }
+  }
+
+  li {
+    &.success {
+      color: #33ee33;
+    }
+
+    &.failure {
+      color: #ee3333;
+    }
+
+    &.loading {
+      color: #3333ee;
+    }
+    span {
+      color: canvas.$streamOsFontColor;
+    }
+  }
+}

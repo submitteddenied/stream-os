@@ -24,5 +24,24 @@ export default {
   },
   degToRad: (deg) => {
     return deg * (Math.PI / 180)
+  },
+  parseSearch: (search) => {
+    return search.slice(1).split('&').reduce((memo, keyPair) => {
+      const [key, value] = keyPair.split('=')
+      if(memo[key] === undefined) {
+        memo[key] = value
+      } else {
+        if(!Array.isArray(memo[key])) {
+          memo[key] = [memo[key]]
+        }
+        memo[key].push(value)
+      }
+      return memo
+    }, {})
+  },
+  qs: (params) => {
+    return Object.keys(params).map((key) => {
+      return [key, encodeURIComponent(params[key])].join('=')
+    }).join('&')
   }
 }

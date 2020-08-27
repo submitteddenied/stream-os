@@ -1,6 +1,6 @@
 const ACTIONS = {
     SET_TODO_LIST: 'SET_TODO_LIST',
-    UPDATE: 'UPDATE'
+    UPDATE_TODO_LIST: 'UPDATE_TODO_LIST'
 }
 
 const DEFAULT_STATE = {
@@ -11,7 +11,7 @@ const todoReducer = (state=DEFAULT_STATE, action) => {
     switch(action.type) {
         case ACTIONS.SET_TODO_LIST:
             return Object.assign({}, state, { items: action.items, isUpdating: false })
-        case ACTIONS.UPDATE:
+        case ACTIONS.UPDATE_TODO_LIST:
             return Object.assign({}, state, { isUpdating: true })
         default:
             return state

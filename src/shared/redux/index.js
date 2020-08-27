@@ -1,8 +1,6 @@
 const Redux = require('redux')
 
-const store = Redux.createStore(Redux.combineReducers({
+module.exports = Redux.combineReducers({
     todo: require('./todo').todos,
     elite: require('./elite').elite
-}))
-
-module.exports = store
+})
